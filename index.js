@@ -11,6 +11,8 @@ let accountService = new AccountService();
     console.log("accessToken = " + accessToken);
     const accountList = await accountService.getAccounts(accessToken);
     console.log('accountList : ' + accountList);
+    const formatedAccouts = accountService.formatAccountList(accountList);
+    console.log('accountListFormated : ' + formatedAccouts);
 })();
 
 

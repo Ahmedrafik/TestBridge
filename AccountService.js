@@ -15,7 +15,22 @@ let AccountService = class {
             });
     }
 
+    formatAccount(account){
+        return `{
+            "acc_number": ${account.acc_number},
+            "amount": "${account.amount}",
+            "currency": "${account.currency}"
+        }`;
+    }
 
+    formatAccountList(accountList){
+        let formattedAccountList = `[`;
+        for(const account in accountList){
+            formattedAccountList += this.formatAccount(account);
+        }
+        formattedAccountList += `]`
+        return formattedAccountList;
+    }
 
 }
 
